@@ -1,0 +1,458 @@
+:root{
+  --print-black:#0a0a0a;
+  --print-ink:#151515;
+  --print-paper:#eeeae0;
+  --print-blue:#5b66f6;
+  --print-cyan:#16d7e5;
+  --print-orange:#f0643c;
+  --print-yellow:#f0cf48;
+  --print-line:#2a2a2a;
+  --cyan:#5b66f6;
+  --void:#0a0a0a;
+  --white:#eeeae0;
+  --line:#2a2a2a;
+}
+html,body{background:var(--print-black)}
+body{color:var(--print-paper);background:var(--print-black)}
+body:before{display:none}
+
+/* Navigation is a tool bar, not a glass card */
+.site-header{
+  width:min(1280px,calc(100% - 36px));height:68px;margin:18px auto 0;padding:0 14px 0 18px;
+  border:1px solid #303030;border-radius:3px;background:#101010;box-shadow:none;backdrop-filter:none;top:10px;
+}
+.site-brand{color:var(--print-paper);letter-spacing:-1.2px}.site-brand>span{color:#fff;border-radius:2px;background:var(--print-blue);box-shadow:none}
+.site-header nav{padding:0;border:0;border-radius:0;background:transparent}
+.site-header nav button{min-height:38px;border-radius:2px;color:#858585;letter-spacing:.09em}
+.site-header nav button:hover{color:var(--print-paper);background:#1b1b1b}
+.site-header nav button.active,.site-header nav button.active:hover{color:#fff;background:var(--print-blue);box-shadow:none}
+.wallet .wallet-button{border-radius:2px;border-color:#363636;background:#181818}.wallet .wallet-button:hover{color:#fff;border-color:var(--print-blue);background:var(--print-blue)}
+.wallet #help{border-radius:2px;color:#aaa}
+
+/* Home split cover */
+.penny-home{width:min(1280px,calc(100% - 36px))}
+.market-hero{min-height:720px;grid-template-columns:.9fr 1.1fr;gap:0;margin-top:28px;padding:0 0 105px;border:1px solid #292929;border-radius:3px;background:var(--print-paper);box-shadow:none;overflow:hidden}
+.market-hero:before,.market-hero:after,.hero-aurora,.hero-glow,.orbit{display:none}
+.market-pitch{align-self:stretch;display:flex;flex-direction:column;justify-content:center;padding:60px 52px;color:var(--print-ink);animation:none}
+.market-pitch .eyebrow{margin-bottom:29px;color:#5b5b5b}.market-pitch .eyebrow b{color:#fff;border:0;border-radius:2px;background:var(--print-blue)}
+.market-pitch h1{max-width:570px;color:var(--print-ink);font-size:clamp(67px,6.5vw,98px);line-height:.78;letter-spacing:-.075em}
+.market-pitch h1 em{display:inline-block;margin-top:12px;padding:8px 12px 10px;color:#fff;background:var(--print-blue);font-size:.82em;line-height:.8;-webkit-text-stroke:0;text-shadow:none}
+.market-pitch p{margin-top:31px;color:#4f4f4f;font-size:15px;line-height:1.72}
+.market-primary,.market-secondary{border-radius:2px}.market-primary{color:#fff;border-color:var(--print-ink);background:var(--print-ink);box-shadow:none}.market-primary:hover{color:#fff;border-color:var(--print-blue);background:var(--print-blue);box-shadow:none}.market-secondary{color:var(--print-ink);border-color:#9d9a93;background:transparent}.market-secondary:hover{color:var(--print-ink);border-color:var(--print-ink);background:transparent}
+.hero-proof{color:#707070}.hero-proof b{color:var(--print-ink)}.hero-proof>i{background:#aaa69e}
+.hero-vault{height:auto;align-self:stretch;margin:0;background:var(--print-blue);perspective:none;animation:none}
+.hero-vault:before{content:"DROP 001";position:absolute;left:24px;top:22px;color:rgba(255,255,255,.74);font:700 9px "Space Grotesk",sans-serif;letter-spacing:.18em}
+.hero-pack.main-pack{left:52%;top:47%;width:272px;height:420px;transform:translate(-50%,-50%) rotate(2deg);border:2px solid #111;border-radius:2px;background:var(--print-yellow);box-shadow:18px 22px 0 rgba(10,10,10,.28);animation:none}
+.hero-pack.main-pack:before{display:none}.hero-pack.main-pack strong{font-size:37px}.hero-pack.main-pack>b{border:2px solid #111;border-radius:50%;background:var(--print-paper);backdrop-filter:none}
+.side-pack{top:49%;width:175px;height:300px;border:2px solid #111;border-radius:2px;opacity:1;filter:none;box-shadow:12px 16px 0 rgba(10,10,10,.22)}
+.side-pack.left{left:5%;transform:translateY(-50%) rotate(-10deg)}.side-pack.right{right:4%;transform:translateY(-50%) rotate(10deg)}
+.vault-caption{left:24px;right:24px;bottom:24px;width:auto;transform:none;border-color:rgba(255,255,255,.42)}.vault-caption span,.vault-caption strong{color:#fff}
+.hero-metrics{left:0;right:0;bottom:0;border:0;border-top:1px solid #292929;border-radius:0;background:var(--print-black);box-shadow:none;backdrop-filter:none}
+.hero-metrics article{border-color:#303030}.hero-metrics span,.hero-metrics small{color:#797979}.hero-metrics strong{color:var(--print-paper)}.hero-metrics .metric-word{color:var(--print-yellow)}.metric-dots{background:#111}.metric-dots i.mine{border-color:var(--print-yellow);background:var(--print-yellow);box-shadow:none}.metric-dots i.rare{border-color:var(--print-blue);background:var(--print-blue)}
+
+/* Pack index */
+.machine-market{padding:105px 0 96px}
+.market-title{padding-bottom:25px;border-color:#303030}.market-title>div>span,.how-heading>span{color:#8f98ff}.market-title h2{font-size:56px;color:var(--print-paper);line-height:.9}.market-title>button{border-radius:2px;color:var(--print-paper);border-color:#3b3b3b;background:#151515}.market-title>button:hover{color:#fff;border-color:var(--print-blue);background:var(--print-blue)}
+.machine-grid{gap:12px}
+.market-pack{grid-template-rows:auto 405px auto auto auto;padding:10px;border-color:#2d2d2d;border-radius:3px;background:#111;box-shadow:none;animation:none}
+.market-pack:hover{transform:translateY(-4px);border-color:var(--pack);box-shadow:none}
+.machine-no{color:#777}.market-pack-art{border-radius:1px;background:var(--pack)}.market-pack-art:before,.market-pack-art:after{display:none}.market-pack-art>span{color:rgba(10,10,10,.62)}.market-pack-art>strong{color:#111}.market-pack-art>b{color:#111;border:2px solid rgba(10,10,10,.55);background:rgba(238,234,224,.62);backdrop-filter:none}.market-pack-art img{filter:drop-shadow(12px 16px 0 rgba(10,10,10,.18))}
+.market-pack-copy{border-color:#303030}.market-pack-copy>div>span,.availability span{color:#7d7d7d}.market-pack-copy h3,.market-pack-copy>strong{color:var(--print-paper)}.availability i{border-radius:0;background:#2b2b2b}.availability i.hot{background:var(--pack);box-shadow:none}.market-pack>button{border-radius:2px;color:var(--print-paper);border-color:#383838;background:#181818}.market-pack>button:hover{color:#fff;border-color:var(--print-blue);background:var(--print-blue)}
+
+/* Process becomes a printed information panel */
+.market-how{margin:0;padding:0;grid-template-columns:1.15fr repeat(2,1fr);border:1px solid #292929;background:var(--print-paper)}
+.how-heading{padding:46px;color:var(--print-ink);background:var(--print-yellow)}.how-heading>span{color:#605414}.how-heading h2{color:var(--print-ink);font-size:48px}
+.market-how article{padding:36px 28px;min-height:195px;border-color:#bdb9b0;color:var(--print-ink)}.market-how article:nth-of-type(n+3){border-color:#bdb9b0}.market-how article>span{color:var(--print-blue)}.market-how h3{color:var(--print-ink)}.market-how p{color:#5d5b56}.market-how article>i{color:#77736a}
+.market-foot{border-color:#2c2c2c}.market-foot p{color:#6f6f6f}
+
+/* Shared editorial hero panels */
+.inner-page{max-width:1280px}
+.machines-stage,.binder-stage,.evolution-stage{min-height:595px;grid-template-columns:.86fr 1.14fr;margin-bottom:70px;padding:0 0 72px;border-color:#292929;border-radius:3px;background:var(--print-paper);box-shadow:none}
+.machines-stage:before,.binder-stage:before,.evolution-stage:before{display:none}
+.machines-copy,.binder-copy,.evolution-copy{align-self:stretch;display:flex;flex-direction:column;justify-content:center;padding:54px;color:var(--print-ink)}
+.machines-copy .kicker,.binder-copy .kicker,.evolution-copy .kicker{color:#62605b}.machines-copy .kicker span,.binder-copy .kicker span,.evolution-copy .kicker span{background:var(--print-blue);box-shadow:none}
+.machines-copy h1,.binder-copy h1,.evolution-copy h1{margin:24px 0 28px;color:var(--print-ink);font-size:clamp(67px,6.3vw,94px);line-height:.78}.machines-copy h1 strong,.binder-copy h1 strong,.evolution-copy h1 strong{display:inline-block;margin-top:11px;padding:8px 11px 10px;color:#fff;background:var(--print-blue);-webkit-text-stroke:0;text-shadow:none;font-size:.82em}.evolution-copy h1 strong{background:var(--print-orange)}
+.machines-copy>p,.binder-copy>p,.evolution-copy>p{color:#55534e}.machine-live{border-radius:2px;border-color:#b9b5ac;background:transparent;color:#5e5b55}.machine-live>b{border-radius:1px;color:#fff;background:var(--print-blue)}.machine-live strong{color:#232323;border-color:#aaa69e}
+.binder-actions>span{color:#65625d}.binder-actions .solid{border-radius:2px;color:#fff;background:var(--print-ink)}.binder-actions .solid:hover{color:#fff;background:var(--print-blue)}
+.machine-showcase,.binder-showcase,.evolution-visual{align-self:stretch;height:auto;margin:0;background:var(--print-blue);transform:none}.evolution-visual{background:var(--print-orange)}
+.machine-showcase:before,.machine-orbit,.binder-halo,.evolution-visual:before,.evolution-visual:after,.fire-disc{display:none}
+.showcase-pack{border:2px solid #111;border-radius:2px;box-shadow:13px 17px 0 rgba(10,10,10,.25)}.showcase-pack.center{top:46%;animation:none}.showcase-pack.back-left,.showcase-pack.back-right{opacity:1;filter:none}.showcase-readout,.binder-caption,.evolution-visual-caption{left:24px;right:24px;bottom:22px;width:auto;transform:none;border-color:rgba(255,255,255,.45)}.showcase-readout span,.showcase-readout strong,.binder-caption span,.binder-caption strong,.evolution-visual-caption span,.evolution-visual-caption strong{color:#fff}
+.machines-stats,.evolution-stage-bar{background:var(--print-black);backdrop-filter:none}.binder-stage:after{content:"ARCHIVE";position:absolute;right:25px;top:20px;color:rgba(255,255,255,.64);font:700 9px "Space Grotesk",sans-serif;letter-spacing:.18em}
+.binder-progress{right:24px;top:24px;width:94px;height:94px;border:2px solid #111;border-radius:2px;background:var(--print-yellow);box-shadow:8px 8px 0 rgba(10,10,10,.25)}.binder-progress:before{display:none}.binder-progress strong,.binder-progress span{color:#111}.binder-fan img{border:2px solid #111;border-radius:2px;box-shadow:12px 16px 0 rgba(10,10,10,.25)}
+.evolution-mini{filter:grayscale(1) brightness(.5);opacity:.68}.evolution-mini.reached{filter:none;opacity:1}.evolution-mini img{border:2px solid #111;border-radius:2px;box-shadow:12px 16px 0 rgba(10,10,10,.22)}
+.evolution-facts div{border-color:#aaa69e}.evolution-facts span{color:#65625d}.evolution-facts strong{color:#1b1b1b}
+
+/* Inner content */
+.pack-shop,.odds-board,.vault-bar,.evo-console{border-radius:3px;background:#111;box-shadow:none}.pack-shop{border-color:#303030}.sealed-pack:hover{background:#151515}.pack-shell{filter:drop-shadow(13px 18px 0 rgba(0,0,0,.3))}.pack-bottom button{border-radius:2px}
+.collection-index-title,.evolution-section-title{border-color:#303030}.collection-index-title>div>span{color:#8f98ff}.collection-index-title h2,.evolution-section-title h2{font-size:48px}.collection-page .vault-bar{border-radius:2px}
+.collection-page .tcg-card{border-radius:2px;background:#111;box-shadow:none}.collection-page .tcg-card.is-owned{background:#151515;box-shadow:none}.collection-page .tcg-card.is-owned:hover{transform:translateY(-4px);box-shadow:none}.tcg-image,.tcg-image img{border-radius:1px}.collection-filters button{border-radius:2px}.collection-filters button.active{color:#fff;border-color:var(--print-blue);background:var(--print-blue)}
+.evolution-section-title span{color:#ff8864}.evolution-page .evo-card{border-radius:2px;background:#111;box-shadow:none}.evo-console{border-color:#303030}.evo-recipe{border-radius:2px}.evo-console .solid{border-radius:2px}.evo-progress{height:5px;border:0;padding:0}.evo-progress i{background:var(--print-orange);box-shadow:none}
+.solid,.solid.dark{border-radius:2px}
+
+/* Original cards presented as physical archive slabs */
+.collection-page .collection-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.collection-page .tcg-card{
+  padding:8px 8px 14px;border:1px solid #303030;border-radius:3px;background:#0d0d0d;
+  transition:transform .22s ease,border-color .22s ease,background .22s ease;
+}
+.collection-page .tcg-card.is-owned{border-color:#414141;background:#141414}
+.collection-page .tcg-card.is-owned:hover{transform:translateY(-5px);border-color:var(--card);background:#181818}
+.slab-head{display:flex;align-items:center;justify-content:space-between;min-height:28px;padding:0 2px;color:#737373;font:700 7px "Space Grotesk",sans-serif;letter-spacing:.16em}
+.slab-head strong{color:#bcbcbc;font:inherit}.tcg-card.is-owned .slab-head strong{color:var(--card)}
+.card-slab{position:relative;padding:8px 8px 0 25px;border:1px solid #353535;background:#202020}
+.card-slab:before,.card-slab:after{content:"";position:absolute;left:4px;right:4px;height:2px;background:repeating-linear-gradient(90deg,#555 0 3px,transparent 3px 6px)}
+.card-slab:before{top:3px}.card-slab:after{bottom:3px}
+.slab-rail{position:absolute;left:0;top:0;bottom:0;width:20px;display:flex;align-items:center;justify-content:center;background:#171717;color:#8a8a8a;border-right:1px solid #383838;overflow:hidden}
+.slab-rail span,.slab-rail small{position:absolute;white-space:nowrap;font:700 6px "Space Grotesk",sans-serif;letter-spacing:.14em;transform:rotate(-90deg)}
+.slab-rail span{top:38px}.slab-rail small{bottom:42px}.slab-rail i{width:3px;height:44px;background:var(--card)}
+.tcg-card .tcg-image{aspect-ratio:.716;border:0;border-radius:0;background:#090909;overflow:hidden}
+.tcg-card .tcg-image img{width:100%;height:100%;border:0;border-radius:0;object-fit:contain;filter:none}
+.slab-cert{display:flex;align-items:center;justify-content:space-between;min-height:29px;color:#7d7d7d;font:700 6px "Space Grotesk",sans-serif;letter-spacing:.11em}
+.slab-cert b{color:#bdbdbd;font-weight:700}
+.tcg-card .tcg-title{min-height:61px;padding:12px 3px 7px;align-items:flex-end}
+.tcg-card .tcg-title small{display:block;margin-bottom:3px;color:#777;font:700 6px "Space Grotesk",sans-serif;letter-spacing:.15em}
+.tcg-card .tcg-title h3{color:#eeeae0;font-size:21px;line-height:1;letter-spacing:-.045em}
+.tcg-card .tcg-title>strong{color:var(--card);font:700 12px "Space Grotesk",sans-serif}
+.tcg-card .tcg-foot{margin:0;padding:9px 3px 0;border-color:#303030;color:#666;font-size:6px}
+.tcg-card .tcg-foot span:last-child{color:#8e8e8e}
+.tcg-card.is-missing{border-style:solid;background:#0b0b0b}
+.tcg-card.is-missing .card-slab{background:#151515}.tcg-card.is-missing .slab-rail i{background:#393939}
+.tcg-card.is-missing .tcg-image img{opacity:.2;filter:grayscale(1) brightness(.48) contrast(1.15)}
+.tcg-card.is-missing:hover .tcg-image img{opacity:.28;filter:grayscale(1) brightness(.55) contrast(1.15)}
+.tcg-card.is-missing .unknown-card{display:flex;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:7px;background:repeating-linear-gradient(135deg,rgba(10,10,10,.2) 0 5px,rgba(10,10,10,.57) 5px 10px);color:#8b8b8b;text-shadow:none}
+.tcg-card.is-missing .unknown-card strong{color:#d0d0d0;font:600 24px "Space Grotesk",sans-serif;letter-spacing:-.05em}
+.tcg-card.is-missing .unknown-card span{padding:5px 7px;color:#aaa;border:1px solid #555;background:#111;font:700 6px "Space Grotesk",sans-serif;letter-spacing:.16em}
+.tcg-card.is-missing .tcg-title h3,.tcg-card.is-missing .tcg-title>strong{color:#666}
+
+/* Machine room: selector, physical dispenser, transparent card pool */
+.machines-page-v2{padding-bottom:70px}
+.machine-page-head{display:flex;align-items:flex-end;justify-content:space-between;padding:50px 0 32px;border-bottom:1px solid #303030}
+.machine-page-head>div>span{display:block;margin-bottom:14px;color:#8f98ff;font:700 10px "Space Grotesk",sans-serif;letter-spacing:.16em}
+.machine-page-head h1{margin:0;color:var(--print-paper);font:600 clamp(48px,5vw,76px)/.9 "Space Grotesk",sans-serif;letter-spacing:-.065em}
+.machine-page-head p{margin:0 0 4px;color:#8a8a8a;font:400 14px/1.55 "DM Sans",sans-serif;text-align:right}
+.machine-tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:18px 0 22px}
+.machine-tabs button{position:relative;min-width:0;height:78px;padding:12px 13px;border:1px solid #303030;border-radius:2px;color:#777;background:#111;text-align:left;transition:border-color .2s,background .2s,transform .2s}
+.machine-tabs button:hover{transform:translateY(-2px);border-color:#666;background:#171717}.machine-tabs button.active{color:#111;border-color:var(--tab);background:var(--tab)}
+.machine-tabs span{position:absolute;right:10px;top:9px;font:700 9px "Space Grotesk",sans-serif}.machine-tabs strong{display:block;margin-top:20px;color:#ddd;font:600 15px "Space Grotesk",sans-serif;letter-spacing:-.03em}.machine-tabs small{display:block;margin-top:4px;font:700 8px "Space Grotesk",sans-serif;letter-spacing:.08em}.machine-tabs button.active strong{color:#111}
+.machine-workbench{display:grid;grid-template-columns:430px 1fr;min-height:780px;border:1px solid #303030;background:var(--print-paper)}
+.machine-pull-panel{position:sticky;top:98px;align-self:start;padding:32px;background:var(--machine);border-right:1px solid #111}
+.real-machine{position:relative;min-height:585px;display:grid;place-items:center;padding:10px 0 6px;overflow:hidden;background:radial-gradient(circle at 50% 45%,rgba(255,255,255,.55),transparent 58%)}
+.real-machine:before{content:"";position:absolute;left:5%;right:5%;bottom:7px;height:28px;border-radius:50%;background:rgba(0,0,0,.28);filter:blur(14px)}
+.real-machine>img{position:relative;z-index:1;display:block;width:min(100%,380px);height:auto;filter:drop-shadow(15px 20px 12px rgba(0,0,0,.28))}
+.machine-number{position:absolute;left:0;top:0;z-index:2;padding:8px 10px;color:#111;border:2px solid #111;background:var(--print-paper);font:800 8px "Space Grotesk",sans-serif;letter-spacing:.14em}
+.machine-selection{position:absolute;right:0;bottom:18px;z-index:2;width:190px;padding:13px 14px;color:#fff;border:2px solid #111;background:#111;box-shadow:7px 8px 0 color-mix(in srgb,var(--machine-accent),#000 28%)}
+.machine-selection span,.machine-selection small{display:block;font:700 7px "Space Grotesk",sans-serif;letter-spacing:.12em}.machine-selection strong{display:block;margin:4px 0;color:var(--machine);font:700 20px/.95 "Space Grotesk",sans-serif;letter-spacing:-.04em}
+.machine-cabinet{padding:10px;border:2px solid #101010;background:#202020;box-shadow:13px 15px 0 rgba(0,0,0,.23)}
+.cabinet-marquee{display:grid;grid-template-columns:1fr auto;gap:2px 12px;padding:13px 14px;color:#111;background:var(--machine-accent);border:1px solid #111}
+.cabinet-marquee span{font:800 10px "Space Grotesk",sans-serif;letter-spacing:.16em}.cabinet-marquee strong{grid-column:1;font:700 24px/.9 "Space Grotesk",sans-serif;letter-spacing:-.05em}.cabinet-marquee small{grid-column:2;grid-row:1/3;align-self:center;font:800 11px "Space Grotesk",sans-serif}
+.cabinet-window{position:relative;height:450px;margin-top:9px;overflow:hidden;border:1px solid #111;background:#0c0c0c}
+.cabinet-grid{position:absolute;inset:0;opacity:.28;background-image:linear-gradient(#555 1px,transparent 1px),linear-gradient(90deg,#555 1px,transparent 1px);background-size:26px 26px}
+.cabinet-card{position:absolute;top:45px;width:145px;border:2px solid #111;filter:saturate(.9);box-shadow:8px 10px 0 rgba(0,0,0,.35)}
+.cabinet-card.card-1{left:18px;transform:rotate(-9deg)}.cabinet-card.card-2{right:18px;transform:rotate(9deg)}.cabinet-card.card-3{left:50%;top:25px;transform:translateX(-50%) rotate(1deg)}
+.cabinet-pack{position:absolute;left:50%;bottom:19px;width:190px;height:235px;padding:18px;transform:translateX(-50%);overflow:hidden;border:2px solid #111;background:var(--machine);box-shadow:10px 12px 0 rgba(0,0,0,.35)}
+.cabinet-pack:before,.cabinet-pack:after{content:"";position:absolute;left:0;right:0;height:7px;background:repeating-linear-gradient(90deg,#111 0 4px,transparent 4px 8px)}.cabinet-pack:before{top:0}.cabinet-pack:after{bottom:0}
+.cabinet-pack span{position:relative;z-index:2;color:#111;font:800 7px "Space Grotesk",sans-serif;letter-spacing:.12em}.cabinet-pack img{position:absolute;left:50%;bottom:17px;width:150px;height:162px;object-fit:contain;transform:translateX(-50%);filter:drop-shadow(7px 9px 0 rgba(0,0,0,.18))}.cabinet-pack strong{position:absolute;left:14px;bottom:13px;z-index:2;color:#111;font:800 24px "Space Grotesk",sans-serif;letter-spacing:-.05em}
+.vend-stock{position:absolute;left:12px;top:12px;bottom:12px;width:calc(100% - 104px);display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:8px;padding:9px;border:1px solid #454545;background:#111}
+.vend-stock:before{content:"PACK STOCK";position:absolute;left:8px;top:-8px;padding:2px 5px;color:#aaa;background:#111;font:700 6px "Space Grotesk",sans-serif;letter-spacing:.15em}
+.vend-cell{position:relative;display:flex;align-items:center;justify-content:center;min-width:0;overflow:hidden;border:1px solid #343434;background:#181818}
+.vend-cell>span{position:absolute;left:5px;top:5px;z-index:4;padding:3px 4px;color:#111;background:#eeeae0;font:800 7px "Space Grotesk",sans-serif}
+.vend-cell.selected{border-color:var(--machine);box-shadow:inset 0 0 0 2px var(--machine)}.vend-cell.selected>span{background:var(--machine)}
+.vend-pack{position:relative;width:74%;height:78%;padding:13px 7px 9px;overflow:hidden;border:1px solid #050505;background:var(--stock);box-shadow:5px 6px 0 #000;transform:rotate(-1deg)}
+.vend-pack:before,.vend-pack:after{content:"";position:absolute;left:0;right:0;height:4px;z-index:3;background:repeating-linear-gradient(90deg,#111 0 3px,transparent 3px 6px)}.vend-pack:before{top:0}.vend-pack:after{bottom:0}
+.vend-pack small{position:relative;z-index:3;display:block;color:#111;font:800 4px "Space Grotesk",sans-serif;white-space:nowrap}.vend-pack strong{position:relative;z-index:3;display:block;margin-top:3px;color:#111;font:800 9px/.9 "Space Grotesk",sans-serif;letter-spacing:-.05em}.vend-pack img{position:absolute;left:50%;bottom:13px;width:88%;height:65%;object-fit:contain;transform:translateX(-50%);filter:drop-shadow(3px 4px 0 rgba(0,0,0,.18))}.vend-pack b{position:absolute;left:6px;bottom:7px;z-index:3;color:#111;font:800 6px "Space Grotesk",sans-serif}
+.vend-coil{position:absolute;left:7px;right:7px;bottom:8px;height:9px;border:2px solid #a7a7a7;border-radius:50%;opacity:.72}.vend-coil:after{content:"";position:absolute;left:14%;right:14%;top:2px;height:1px;background:#a7a7a7;box-shadow:0 3px #a7a7a7}
+.vend-console{position:absolute;right:10px;top:12px;bottom:12px;width:75px;padding:8px;border:1px solid #454545;background:#191919}
+.vend-display{padding:7px 5px;color:#111;background:var(--machine-accent);border:1px solid #000}.vend-display span,.vend-display small{display:block;font:800 5px "Space Grotesk",sans-serif;letter-spacing:.1em}.vend-display strong{display:block;margin:3px 0;font:800 22px/.9 "Space Grotesk",sans-serif}
+.vend-keys{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:9px}.vend-keys i{display:grid;place-items:center;aspect-ratio:1;border:1px solid #555;color:#ddd;background:#292929;font:700 7px "Space Grotesk",sans-serif;font-style:normal}
+.vend-reader{position:absolute;left:8px;right:8px;bottom:8px;padding:7px 4px;border:1px solid #555;color:#999;font:700 5px/1.4 "Space Grotesk",sans-serif;text-align:center;letter-spacing:.08em}.vend-reader strong{color:var(--machine);font-size:8px}
+.cabinet-controls{display:grid;grid-template-columns:1fr 42px 100px;gap:10px;align-items:center;margin-top:9px;padding:13px;border:1px solid #111;background:#eeeae0;color:#111}.cabinet-controls div:first-child span{display:block;font:700 7px "Space Grotesk",sans-serif;letter-spacing:.15em}.cabinet-controls div:first-child strong{font:700 15px "Space Grotesk",sans-serif}.cabinet-controls>i{width:28px;height:28px;border:7px solid #111;border-radius:50%;background:var(--machine)}.cabinet-slot{padding:9px 6px;border:2px solid #111;background:#111;color:#fff;font:700 7px "Space Grotesk",sans-serif;text-align:center;letter-spacing:.1em}
+.machine-pull-button{display:grid;grid-template-columns:1fr auto 22px;gap:12px;align-items:center;width:100%;min-height:62px;margin-top:26px;padding:0 17px;border:2px solid #111;border-radius:2px;color:#111;background:var(--print-paper);text-align:left;transition:transform .2s,background .2s}.machine-pull-button:hover{transform:translateY(-3px);background:var(--machine-accent)}.machine-pull-button span{font:800 11px "Space Grotesk",sans-serif;letter-spacing:.06em}.machine-pull-button strong{font:800 13px "Space Grotesk",sans-serif}.machine-pull-button i{font:700 18px "Space Grotesk",sans-serif}
+.machine-proof{display:grid;grid-template-columns:1fr;gap:7px;margin-top:22px;color:#111;font:700 8px "Space Grotesk",sans-serif;letter-spacing:.12em}.machine-proof span{padding-bottom:7px;border-bottom:1px solid rgba(0,0,0,.28)}
+.machine-catalog{min-width:0;padding:40px 38px 50px;color:#151515}
+.machine-description>span{color:#666;font:700 10px "Space Grotesk",sans-serif;letter-spacing:.15em}.machine-description h2{margin:11px 0 13px;font:600 clamp(52px,5vw,78px)/.82 "Space Grotesk",sans-serif;letter-spacing:-.07em}.machine-description p{max-width:650px;margin:0;color:#5d5b56;font:400 16px/1.5 "DM Sans",sans-serif}
+.tier-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:34px 0 42px}.tier-strip button{position:relative;display:grid;grid-template-columns:auto 1fr;gap:3px 8px;min-height:95px;padding:15px;border:1px solid #b8b5ad;border-radius:2px;color:#555;background:transparent;text-align:left}.tier-strip button:hover,.tier-strip button.active{border-color:#111;background:#fff}.tier-strip i{grid-row:1/3;width:8px;height:8px;margin-top:2px;border-radius:50%;background:var(--machine)}.tier-strip span{font:700 9px "Space Grotesk",sans-serif;letter-spacing:.1em}.tier-strip strong{grid-column:2;color:#111;font:600 27px "Space Grotesk",sans-serif}.tier-strip small{grid-column:2;color:#777;font:700 8px "Space Grotesk",sans-serif;letter-spacing:.1em}
+.pool-heading{display:flex;align-items:flex-end;justify-content:space-between;padding-top:24px;border-top:2px solid #151515}.pool-heading span{font:700 9px "Space Grotesk",sans-serif;letter-spacing:.14em}.pool-heading h3{margin:6px 0 0;font:600 34px "Space Grotesk",sans-serif;letter-spacing:-.05em}.pool-filters{display:flex;gap:5px}.pool-filters button{min-height:32px;padding:0 12px;border:1px solid #b8b5ad;border-radius:2px;color:#555;background:transparent;font:700 8px "Space Grotesk",sans-serif}.pool-filters button:hover,.pool-filters button.active{color:#fff;border-color:#111;background:#111}.pool-note{margin:12px 0 18px;color:#777;font:500 11px "DM Sans",sans-serif}
+.machine-card-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:17px 10px}.machine-card-grid article{min-width:0}.pool-card-image{position:relative;padding:5px;border:1px solid #bbb8b0;background:#dad7cf}.pool-card-image img{display:block;width:100%;aspect-ratio:.716;object-fit:contain}.pool-card-image span{position:absolute;left:5px;right:5px;bottom:5px;padding:5px;color:#fff;background:rgba(10,10,10,.82);font:700 6px "Space Grotesk",sans-serif;letter-spacing:.1em}.machine-card-grid article>div:last-child{position:relative;padding:8px 0 0}.machine-card-grid strong{display:block;overflow:hidden;color:#171717;font:700 12px "Space Grotesk",sans-serif;text-overflow:ellipsis;white-space:nowrap}.machine-card-grid small{display:block;margin-top:3px;overflow:hidden;color:#777;font:600 7px "Space Grotesk",sans-serif;text-overflow:ellipsis;white-space:nowrap}.machine-card-grid b{display:block;margin-top:5px;color:#151515;font:700 11px "Space Grotesk",sans-serif}.machine-card-grid b:before{content:"";display:inline-block;width:17px;height:3px;margin-right:6px;vertical-align:middle;background:var(--pool-card)}
+.machine-method{display:grid;grid-template-columns:1.2fr repeat(4,1fr);margin-top:18px;border:1px solid #303030;background:#111}.machine-method>*{padding:20px;border-right:1px solid #303030;color:#858585;font:700 9px "Space Grotesk",sans-serif;letter-spacing:.08em}.machine-method strong{color:#eeeae0}.machine-method>*:last-child{border-right:0}
+
+@media(max-width:1000px){
+  .market-hero{grid-template-columns:.85fr 1.15fr}.market-pitch{padding:44px 34px}.hero-pack.main-pack{width:235px;height:375px}.machine-grid{grid-template-columns:repeat(2,1fr)}
+  .machines-copy,.binder-copy,.evolution-copy{padding:38px}.machines-stage,.binder-stage,.evolution-stage{grid-template-columns:.9fr 1.1fr}
+  .collection-page .collection-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .machine-workbench{grid-template-columns:360px 1fr}.machine-pull-panel{padding:22px}.real-machine{min-height:535px}.cabinet-window{height:400px}.machine-catalog{padding:32px 25px}.machine-card-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.machine-tabs strong{font-size:12px}
+}
+
+@media(max-width:760px){
+  .site-header{width:calc(100% - 20px);height:111px;margin-top:10px;padding:0 10px;border-radius:3px;background:#101010}.site-header nav{position:static;z-index:auto;grid-column:1/-1;grid-row:2;justify-self:stretch;width:100%;height:auto;margin:0;overflow-x:auto;border:0;background:#101010;backdrop-filter:none}.site-header nav button{flex:1;min-width:max-content;border-radius:1px}
+  .penny-home{width:100%}.market-hero{display:block;margin:18px 8px 0;padding:0 0 318px;border-radius:3px;overflow:hidden}.market-pitch{padding:43px 18px 34px}.market-pitch h1{font-size:55px}.market-pitch h1 em{margin-top:8px}.market-pitch p{font-size:14px}.market-actions{grid-template-columns:1fr 1fr}.market-primary,.market-secondary{min-width:0;padding:0 10px;font-size:8px}.hero-proof{margin-bottom:5px}.hero-vault{position:absolute;left:0;right:0;bottom:157px;height:310px;margin:0}.hero-pack.main-pack{top:48%;width:150px;height:235px;padding:21px 14px;box-shadow:10px 12px 0 rgba(10,10,10,.25)}.hero-pack.main-pack strong{font-size:22px}.hero-pack.main-pack>span,.hero-pack.main-pack small{font-size:5px}.hero-pack.main-pack>b{right:9px;bottom:9px;width:43px;height:43px;font-size:11px}.side-pack{width:98px;height:165px}.side-pack.left{left:7%}.side-pack.right{right:6%}.vault-caption{display:none}.hero-metrics{grid-template-columns:repeat(2,1fr);bottom:0}.hero-metrics article{min-height:76px}.machine-market{padding-top:72px}.market-title h2{font-size:43px}.market-pack{grid-template-rows:auto 405px auto auto auto}
+  .market-how{display:block;margin:0 8px}.how-heading{padding:37px 24px}.how-heading h2{font-size:40px}.market-how article{min-height:0;border-left:0;border-top:1px solid #bdb9b0!important}
+  .inner-page{padding-top:22px}.machines-stage,.binder-stage,.evolution-stage{display:block;margin:0 8px 48px;padding:0 0 205px;border-radius:3px;overflow:hidden}.machines-copy,.binder-copy,.evolution-copy{padding:42px 18px}.machines-copy h1,.binder-copy h1,.evolution-copy h1{font-size:55px}.machines-copy>p,.binder-copy>p,.evolution-copy>p{font-size:14px}.machine-showcase,.binder-showcase,.evolution-visual{position:absolute;left:0;right:0;bottom:117px;height:330px;margin:0}.machine-showcase{bottom:117px}.showcase-pack.center{width:155px;height:250px}.showcase-pack.back-left,.showcase-pack.back-right{width:105px;height:180px}.showcase-readout,.binder-caption,.evolution-visual-caption{display:none}.machines-stats,.evolution-stage-bar{height:117px}.binder-stage{padding-bottom:420px}.binder-showcase{bottom:0;height:410px}.binder-progress{right:15px;top:15px;width:77px;height:77px}.binder-fan img{width:165px}.evolution-stage{padding-bottom:390px}.evolution-visual{bottom:117px;height:273px}.evolution-mini{width:105px}.evolution-mini.mini-1{left:2%}.evolution-mini.mini-2{left:34%}.evolution-mini.mini-3{right:1%}
+  .collection-index-title h2,.evolution-section-title h2{font-size:37px}.collection-page .collection-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .collection-page .tcg-card{padding:5px 5px 10px}.card-slab{padding:6px 6px 0 20px}.slab-rail{width:16px}.slab-rail span{top:32px}.slab-rail small{bottom:37px}.slab-rail i{height:35px}.tcg-card .tcg-title{min-height:53px;padding-top:10px}.tcg-card .tcg-title h3{font-size:16px}.tcg-card .tcg-foot{font-size:5px}.slab-cert{font-size:5px}
+  .machines-page-v2{padding:0 8px 45px}.machine-page-head{display:block;padding:37px 8px 24px}.machine-page-head h1{font-size:48px}.machine-page-head p{margin-top:18px;text-align:left}.machine-tabs{display:flex;overflow-x:auto;padding:13px 0 17px}.machine-tabs button{flex:0 0 145px}.machine-workbench{display:block;border-radius:2px}.machine-pull-panel{position:relative;top:auto;padding:17px}.real-machine{min-height:530px}.real-machine>img{width:min(100%,350px)}.machine-selection{right:3px;bottom:12px;width:175px}.machine-cabinet{max-width:390px;margin:auto}.cabinet-window{height:410px}.machine-catalog{padding:35px 14px}.machine-description h2{font-size:55px}.machine-description p{font-size:14px}.tier-strip{gap:5px;margin:28px 0 35px}.tier-strip button{min-height:88px;padding:10px}.tier-strip i{display:none}.tier-strip strong,.tier-strip span,.tier-strip small{grid-column:1}.tier-strip strong{font-size:21px}.pool-heading{display:block}.pool-filters{margin-top:18px;overflow-x:auto}.pool-filters button{flex:0 0 auto}.machine-card-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 7px}.machine-card-grid strong{font-size:10px}.machine-method{grid-template-columns:1fr 1fr}.machine-method>*{padding:16px;border-bottom:1px solid #303030}.machine-method>*:first-child{grid-column:1/-1}
+}
+
+/* Clear, functional interface details */
+.availability{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:12px 2px 10px}
+.availability>span{position:relative;height:5px;margin:0;background:#2b2b2b}
+.availability>span:after{content:"";position:absolute;inset:0 auto 0 0;width:var(--rate);background:var(--pack)}
+.availability>strong{color:#8b8b8b;font:700 7px "Space Grotesk",sans-serif;letter-spacing:.1em;white-space:nowrap}
+.market-how article{grid-template-columns:42px 1fr}
+.vault-progress{height:7px;overflow:hidden;background:#292929}
+.vault-progress i{display:block;height:100%;background:var(--print-blue)}
+.collection-key b{display:block;width:18px;height:4px;background:#5b5b5b}
+.collection-key b.found{background:var(--print-blue)}
+.machine-pull-button{grid-template-columns:1fr auto}
+.machine-proof{display:block;padding-bottom:10px;border-bottom:1px solid rgba(0,0,0,.28)}
+.tier-strip button{grid-template-columns:1fr}
+.tier-strip strong,.tier-strip small{grid-column:1}
+.pack-overlay.result{background:#090909}
+.result-card{border:1px solid #424242;background:#111;box-shadow:0 32px 80px rgba(0,0,0,.72)}
+.revealed-card{border-radius:2px}
+.result-card button{border-radius:2px}
+.opening-noise,.opening-ring,.result-grid,.result-burst,.pull-particles,.reveal-shine{display:none!important}
+.opening-status{letter-spacing:.12em}
+
+@media(max-width:760px){
+  .vault-progress{grid-column:1/-1;width:100%}
+}
+
+/* Site-wide print wall */
+#app{position:relative;min-height:100vh;isolation:isolate}
+.site-backdrop{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:linear-gradient(90deg,#080808 0 7%,transparent 7% 93%,#080808 93%),linear-gradient(125deg,transparent 0 64%,rgba(91,102,246,.055) 64% 76%,transparent 76%)}
+.site-backdrop:before{content:"";position:absolute;left:-12vw;top:680px;width:58vw;height:410px;transform:rotate(-8deg);border:2px solid rgba(238,234,224,.075);background:rgba(238,234,224,.018);box-shadow:28px 30px 0 rgba(240,100,60,.055)}
+.site-backdrop:after{content:"";position:absolute;right:-18vw;top:2100px;width:68vw;height:520px;transform:rotate(7deg);border:2px solid rgba(22,215,229,.09);background:rgba(22,215,229,.018);box-shadow:-32px 34px 0 rgba(91,102,246,.05)}
+.backdrop-logo{position:absolute;left:50%;top:920px;width:min(1180px,86vw);height:auto;transform:translateX(-50%) rotate(-4deg);opacity:.035;filter:grayscale(1)}
+.backdrop-word{position:absolute;right:-65px;top:1540px;transform:rotate(90deg);transform-origin:center;color:transparent;-webkit-text-stroke:2px rgba(238,234,224,.055);font:800 clamp(150px,18vw,300px)/.75 "Space Grotesk",sans-serif;letter-spacing:-.09em}
+.backdrop-band{position:absolute;display:block;height:20px;border:0;transform:rotate(-10deg)}
+.backdrop-band.cyan{left:-8%;top:1320px;width:54%;background:rgba(22,215,229,.22)}
+.backdrop-band.orange{right:-7%;top:2980px;width:47%;background:rgba(240,100,60,.22)}
+.backdrop-card{position:absolute;display:block;width:245px;aspect-ratio:.716;border:2px solid rgba(238,234,224,.075);background:linear-gradient(145deg,rgba(238,234,224,.025),transparent 55%);box-shadow:14px 16px 0 rgba(0,0,0,.3)}
+.backdrop-card:before{content:"";position:absolute;inset:12px;border:1px solid rgba(238,234,224,.055)}
+.backdrop-card.card-a{left:3vw;top:1850px;transform:rotate(-13deg)}.backdrop-card.card-b{right:4vw;top:3450px;transform:rotate(11deg)}
+.backdrop-frame{position:absolute;left:6vw;right:6vw;top:2720px;height:610px;border:1px solid rgba(238,234,224,.045);border-left:18px solid rgba(91,102,246,.08);border-bottom:18px solid rgba(240,100,60,.065)}
+
+@media(max-width:760px){
+  .site-backdrop{background:linear-gradient(115deg,transparent 0 72%,rgba(91,102,246,.07) 72% 88%,transparent 88%)}
+  .site-backdrop:before{left:-55%;top:920px;width:150%;height:300px}.site-backdrop:after{right:-70%;top:2850px;width:150%;height:400px}
+  .backdrop-logo{top:1240px;width:145%;opacity:.045}.backdrop-word{right:-125px;top:1950px;font-size:150px;-webkit-text-stroke-width:1px}.backdrop-band.cyan{top:1640px;width:90%}.backdrop-band.orange{top:3600px;width:85%}.backdrop-card{width:150px}.backdrop-card.card-a{left:-48px;top:2350px}.backdrop-card.card-b{right:-58px;top:4300px}.backdrop-frame{left:8px;right:8px;top:3200px;height:500px}
+}
+
+@media(max-width:390px){
+  .market-pitch h1,.machines-copy h1,.binder-copy h1,.evolution-copy h1{font-size:50px}.market-actions{grid-template-columns:1fr}.market-hero{padding-bottom:318px}.market-pack{grid-template-rows:auto 375px auto auto auto}
+  .machine-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.cabinet-window{height:375px}.cabinet-card{width:125px}.cabinet-pack{width:175px;height:220px}.machine-description h2{font-size:49px}
+}
+
+/* Pokégen campaign identity */
+.site-brand{width:166px;height:48px;padding:0;border:0;background:transparent}
+.site-brand img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 3px 0 #000)}
+.brand-hero{position:relative;height:620px;margin-top:28px;overflow:hidden;border:1px solid #353535;border-radius:3px;background:#050505;isolation:isolate}
+.brand-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.brand-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,3,3,.98) 0%,rgba(3,3,3,.86) 23%,rgba(3,3,3,.23) 49%,rgba(3,3,3,.02) 72%),linear-gradient(0deg,rgba(0,0,0,.82),transparent 36%)}
+.brand-copy{position:absolute;left:50px;top:50%;z-index:2;width:min(410px,38%);transform:translateY(-55%)}
+.brand-copy>img{display:block;width:100%;height:auto;filter:drop-shadow(10px 13px 0 rgba(0,0,0,.48))}
+.brand-copy p{margin:29px 0;color:#d2cfc6;font:500 16px/1.65 "DM Sans",sans-serif}
+.brand-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.brand-actions button{min-width:0;height:49px}
+.brand-actions .market-primary{color:#111;border-color:#f0643c;background:#f0643c}.brand-actions .market-primary:hover{border-color:#16d7e5;background:#16d7e5}
+.brand-actions .market-secondary{color:#eeeae0;border-color:#6b6b6b;background:rgba(8,8,8,.5)}.brand-actions .market-secondary:hover{color:#111;border-color:#eeeae0;background:#eeeae0}
+.brand-stats{position:absolute;left:0;right:0;bottom:0;z-index:3;display:grid;grid-template-columns:repeat(4,1fr);min-height:86px;border-top:1px solid rgba(238,234,224,.34);background:rgba(7,7,7,.86);backdrop-filter:blur(8px)}
+.brand-stats span{display:flex;flex-direction:column;justify-content:center;padding:15px 22px;color:#9a9a9a;border-right:1px solid #383838;font:700 8px "Space Grotesk",sans-serif;letter-spacing:.1em}.brand-stats span:last-child{border-right:0}.brand-stats strong{margin-bottom:5px;color:#eeeae0;font:700 22px "Space Grotesk",sans-serif;letter-spacing:-.04em}.brand-stats span:nth-child(2) strong{color:#16d7e5}.brand-stats span:nth-child(4) strong{color:#f0643c}
+
+@media(max-width:760px){
+  .site-brand{width:132px;height:41px}.brand-hero{height:auto;margin:18px 8px 0;padding-top:306px}.brand-art{height:306px;object-position:68% center}.brand-shade{height:306px;background:linear-gradient(0deg,#080808 0%,transparent 38%),linear-gradient(90deg,rgba(0,0,0,.38),transparent 40%)}
+  .brand-copy{position:relative;left:auto;top:auto;width:auto;padding:25px 18px 28px;transform:none;background:#080808}.brand-copy>img{width:min(100%,330px)}.brand-copy p{margin:23px 0;font-size:14px}.brand-actions{grid-template-columns:1fr}.brand-stats{position:relative;grid-template-columns:1fr 1fr;min-height:0}.brand-stats span{min-height:70px;padding:12px 14px;border-bottom:1px solid #383838}.brand-stats strong{font-size:18px}
+}
+
+/* Scroll choreography */
+.motion-ready .fx-reveal{opacity:0;transform:translate3d(0,54px,0);transition:opacity .72s cubic-bezier(.2,.72,.2,1) var(--fx-delay,0ms),transform .92s cubic-bezier(.16,1,.3,1) var(--fx-delay,0ms)}
+.motion-ready .fx-reveal.fx-in{opacity:1;transform:translate3d(0,0,0)}
+.motion-ready .market-pack.fx-reveal{transform:translate3d(0,72px,0) rotate(.6deg)}
+.motion-ready .market-pack.fx-reveal:nth-child(even){transform:translate3d(0,72px,0) rotate(-.6deg)}
+.motion-ready .market-pack.fx-in{transform:translate3d(0,0,0) rotate(0)}
+.motion-ready .machine-card-grid article.fx-reveal,.motion-ready .collection-grid .tcg-card.fx-reveal{transform:translate3d(0,36px,0) scale(.97)}
+.motion-ready .machine-card-grid article.fx-in,.motion-ready .collection-grid .tcg-card.fx-in{transform:translate3d(0,0,0) scale(1)}
+.motion-ready .backdrop-logo{transform:translateX(-50%) translateY(var(--depth-logo,0px)) rotate(-4deg)}
+.motion-ready .backdrop-word{transform:translateY(var(--depth-word,0px)) rotate(90deg)}
+.motion-ready .backdrop-band.cyan{transform:translate3d(var(--depth-cyan-x,0px),var(--depth-cyan-y,0px),0) rotate(-10deg)}
+.motion-ready .backdrop-band.orange{transform:translate3d(var(--depth-orange-x,0px),var(--depth-orange-y,0px),0) rotate(-10deg)}
+.motion-ready .market-pack-art img{transition:transform .65s cubic-bezier(.16,1,.3,1),filter .65s ease}.motion-ready .market-pack:hover .market-pack-art img{transform:translateY(-10px) scale(1.035);filter:drop-shadow(18px 24px 0 rgba(10,10,10,.2))}
+.motion-ready .pool-card-image{overflow:hidden}.motion-ready .pool-card-image img{transition:transform .55s cubic-bezier(.16,1,.3,1)}.motion-ready .machine-card-grid article:hover .pool-card-image img{transform:scale(1.055)}
+.motion-ready .tcg-image{overflow:hidden}.motion-ready .tcg-image>img{transition:transform .6s cubic-bezier(.16,1,.3,1)}.motion-ready .tcg-card:hover .tcg-image>img{transform:scale(1.035)}
+.motion-ready button{transition:transform .2s ease,background-color .25s ease,color .25s ease,border-color .25s ease}.motion-ready button:active{transform:translateY(2px)}
+
+@media(max-width:760px){
+  .motion-ready .machine-card-grid article.fx-reveal,.motion-ready .collection-grid .tcg-card.fx-reveal{transform:translate3d(0,24px,0) scale(.98)}
+  .motion-ready .machine-card-grid article.fx-in,.motion-ready .collection-grid .tcg-card.fx-in{transform:translate3d(0,0,0) scale(1)}
+}
+@media(prefers-reduced-motion:reduce){
+  .fx-reveal,.brand-copy,.brand-stats span,.brand-art,.backdrop-logo,.backdrop-word,.backdrop-band{animation:none!important;transition:none!important;clip-path:none;opacity:1}
+}
+
+/* Button system */
+button:focus-visible{outline:2px solid var(--print-yellow);outline-offset:3px}
+.brand-actions button,.market-title>button,.market-pack>button,.solid,.machine-pull-button,.result-card button,.wallet .wallet-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border:1px solid transparent;border-radius:4px;font:700 10px "Space Grotesk",sans-serif;letter-spacing:.11em;line-height:1;text-align:center;box-shadow:inset 0 1px rgba(255,255,255,.14);transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease,border-color .2s ease,color .2s ease}
+.brand-actions button:hover,.market-title>button:hover,.market-pack>button:hover,.solid:hover,.machine-pull-button:hover,.result-card button:hover,.wallet .wallet-button:hover{transform:translateY(-2px)}
+.brand-actions button:active,.market-title>button:active,.market-pack>button:active,.solid:active,.machine-pull-button:active,.result-card button:active,.wallet .wallet-button:active{transform:translateY(1px);box-shadow:none}
+
+.brand-actions .market-primary{color:#111;border-color:#ff7b57;background:var(--print-orange);box-shadow:0 5px 0 #a83620,inset 0 1px rgba(255,255,255,.35)}
+.brand-actions .market-primary:hover{color:#111;border-color:#ff9a7e;background:#ff7953;box-shadow:0 7px 0 #a83620,inset 0 1px rgba(255,255,255,.4)}
+.brand-actions .market-secondary{color:#f3efe7;border-color:#696969;background:rgba(8,8,8,.78);box-shadow:0 5px 0 #000,inset 0 1px rgba(255,255,255,.09)}
+.brand-actions .market-secondary:hover{color:#111;border-color:#f3efe7;background:#f3efe7;box-shadow:0 7px 0 #555}
+
+.site-header nav{gap:5px}
+.site-header nav button{min-height:36px;padding:0 15px;border:1px solid transparent;border-radius:4px;font:700 9px "Space Grotesk",sans-serif;letter-spacing:.1em}
+.site-header nav button:hover{color:#eeeae0;border-color:#353535;background:#181818}
+.site-header nav button.active,.site-header nav button.active:hover{color:#fff;border-color:#747eff;background:var(--print-blue);box-shadow:0 3px 0 #313993,inset 0 1px rgba(255,255,255,.2)}
+.wallet .wallet-button{height:38px;min-height:38px;padding:0 16px;color:#eeeae0;border-color:#414141;background:#191919;box-shadow:inset 0 1px rgba(255,255,255,.08)}
+.wallet .wallet-button:hover{color:#111;border-color:#29e6f3;background:var(--print-cyan);box-shadow:0 4px 0 #087a83}
+.wallet #help{width:34px;height:34px;border-color:#414141;border-radius:4px;background:#161616;font:700 12px "Space Grotesk",sans-serif}.wallet #help:hover{color:#111;border-color:#eeeae0;background:#eeeae0}
+
+.market-title>button{min-width:170px;color:#eeeae0;border-color:#414141;background:#171717;box-shadow:0 4px 0 #000,inset 0 1px rgba(255,255,255,.08)}
+.market-title>button:hover{color:#fff;border-color:#747eff;background:var(--print-blue);box-shadow:0 6px 0 #313993}
+.market-pack>button{width:100%;min-height:45px;justify-content:flex-start;padding-left:18px;color:#eeeae0;border-color:#383838;background:linear-gradient(90deg,var(--pack) 0 5px,#181818 5px);box-shadow:inset 0 1px rgba(255,255,255,.06)}
+.market-pack>button:hover{color:#111;border-color:var(--pack);background:var(--pack);box-shadow:0 5px 0 color-mix(in srgb,var(--pack),#000 48%)}
+
+.solid,.solid.dark{color:#fff;border-color:#111;background:#111;box-shadow:0 5px 0 #73706a,inset 0 1px rgba(255,255,255,.13)}
+.solid:hover,.solid.dark:hover{color:#fff;border-color:#747eff;background:var(--print-blue);box-shadow:0 7px 0 #313993}
+.machine-pull-button{display:grid;grid-template-columns:1fr auto;width:100%;min-height:58px;justify-content:stretch;padding:0 17px;color:#111;border:2px solid #111;background:#fff;box-shadow:0 6px 0 #111;text-align:left}
+.machine-pull-button span{text-align:left}.machine-pull-button strong{padding-left:16px;border-left:1px solid #bbb}
+.machine-pull-button:hover{color:#111;border-color:#111;background:var(--machine-accent);box-shadow:0 8px 0 #111}
+.result-card button{width:100%;color:#111;border-color:var(--pull);background:var(--pull);box-shadow:0 5px 0 color-mix(in srgb,var(--pull),#000 55%)}
+
+.collection-filters,.pool-filters{gap:6px}
+.collection-filters button,.pool-filters button{min-height:34px;padding:0 13px;border:1px solid #b8b5ad;border-radius:3px;color:#5f5d57;background:transparent;font:700 8px "Space Grotesk",sans-serif;letter-spacing:.08em;box-shadow:none}
+.collection-filters button:hover,.pool-filters button:hover{color:#111;border-color:#111;background:#fff}
+.collection-filters button.active,.pool-filters button.active{color:#fff;border-color:#111;background:#111;box-shadow:0 3px 0 #8b8880}
+.machine-tabs button{border-radius:4px;box-shadow:inset 0 1px rgba(255,255,255,.05)}
+.machine-tabs button:hover{transform:translateY(-2px);border-color:#777;box-shadow:0 4px 0 #000}
+.machine-tabs button.active{border-color:var(--tab);background:var(--tab);box-shadow:0 5px 0 color-mix(in srgb,var(--tab),#000 55%)}
+.tier-strip button{border-radius:4px;box-shadow:none;transition:transform .2s ease,border-color .2s ease,background-color .2s ease,box-shadow .2s ease}
+.tier-strip button:hover{transform:translateY(-2px);border-color:#111;box-shadow:0 4px 0 #aaa69e}.tier-strip button.active{border:2px solid #111;background:#fff;box-shadow:0 5px 0 #111}
+
+@media(max-width:760px){
+  .brand-actions button{width:100%;min-height:50px}.site-header nav{gap:3px}.site-header nav button{padding:0 11px;font-size:8px}.market-title>button{min-width:0;padding:0 14px}.collection-filters button,.pool-filters button{min-height:36px}.machine-pull-button{min-height:58px}
+}
+
+/* Single-color vault cover */
+.collection-page .binder-stage{grid-template-columns:.82fr 1.18fr;min-height:595px;padding:0;overflow:hidden;border-color:#087f88;background:var(--print-cyan)}
+.collection-page .binder-copy,.collection-page .binder-showcase{height:100%;color:#0b1718;background:var(--print-cyan)}
+.collection-page .binder-copy{padding:58px}
+.collection-page .binder-copy .kicker{color:#174d51}.collection-page .binder-copy .kicker span{background:#111}
+.collection-page .binder-copy h1{color:#111}.collection-page .binder-copy h1 strong{color:var(--print-cyan);background:#111}
+.collection-page .binder-copy>p{color:#17464a}
+.collection-page .binder-actions>span{color:#17464a}
+.collection-page .binder-stage:after{color:rgba(7,36,39,.55)}
+.collection-page .binder-progress{color:var(--print-cyan);border-color:#111;background:#111;box-shadow:8px 8px 0 rgba(3,70,76,.28)}
+.collection-page .binder-progress strong,.collection-page .binder-progress span{color:var(--print-cyan)}
+.collection-page .binder-caption{border-color:rgba(7,36,39,.35)}.collection-page .binder-caption span,.collection-page .binder-caption strong{color:#123f43}
+.binder-empty{position:absolute;left:50%;top:50%;display:flex;flex-direction:column;align-items:center;width:80%;transform:translate(-50%,-50%);color:#0a363a;text-align:center}
+.binder-empty strong{font:700 clamp(48px,5.8vw,86px)/.82 "Space Grotesk",sans-serif;letter-spacing:-.07em}
+.binder-empty span{margin-top:20px;padding-top:13px;border-top:2px solid #0a363a;font:700 9px "Space Grotesk",sans-serif;letter-spacing:.13em}
+
+@media(max-width:760px){
+  .collection-page .binder-stage{min-height:760px;padding:0;margin-bottom:48px;background:var(--print-cyan)}
+  .collection-page .binder-copy{height:350px;padding:42px 18px}.collection-page .binder-showcase{bottom:0;height:410px}
+  .binder-empty strong{font-size:48px}.binder-empty span{font-size:7px}
+}
+
+/* Larger rounded controls with a direct hover scale */
+.brand-actions button,.market-title>button,.market-pack>button,.solid,.machine-pull-button,.result-card button,.wallet .wallet-button{border-radius:10px;font-size:11px;letter-spacing:.1em}
+.site-header nav button{min-height:40px;padding:0 18px;border-radius:9px;font-size:11px}
+.wallet #help{border-radius:9px}
+.collection-filters button,.pool-filters button{min-height:38px;padding:0 15px;border-radius:8px;font-size:9px}
+.machine-tabs button{height:82px;border-radius:11px}.machine-tabs strong{font-size:16px}.machine-tabs small{font-size:9px}
+.tier-strip button{border-radius:9px}
+.motion-ready .brand-actions button:hover,.motion-ready .market-title>button:hover,.motion-ready .market-pack>button:hover,.motion-ready .solid:hover,.motion-ready .machine-pull-button:hover,.motion-ready .result-card button:hover,.motion-ready .wallet .wallet-button:hover,.motion-ready .site-header nav button:hover,.motion-ready .collection-filters button:hover,.motion-ready .pool-filters button:hover,.motion-ready .machine-tabs button:hover,.motion-ready .tier-strip button:hover{transform:scale(1.045)}
+.motion-ready .brand-actions button:active,.motion-ready .market-title>button:active,.motion-ready .market-pack>button:active,.motion-ready .solid:active,.motion-ready .machine-pull-button:active,.motion-ready .result-card button:active,.motion-ready .wallet .wallet-button:active,.motion-ready .site-header nav button:active,.motion-ready .collection-filters button:active,.motion-ready .pool-filters button:active,.motion-ready .machine-tabs button:active,.motion-ready .tier-strip button:active{transform:scale(.98)}
+
+/* Dark machine room; only the odds remain white */
+.machine-workbench{grid-template-columns:430px 1fr;gap:18px;min-height:780px;border:0;background:transparent}
+.machine-pull-panel{overflow:hidden;border:0;border-radius:22px;background:var(--machine);box-shadow:0 18px 0 color-mix(in srgb,var(--machine),#000 48%)}
+.real-machine{border-radius:14px;background:rgba(255,255,255,.14)}
+.machine-number{border-radius:7px}
+.machine-selection{border-radius:10px}
+.machine-pull-button{border-radius:11px}
+.machine-catalog{border:1px solid #303030;border-radius:22px;color:#eeeae0;background:#101010}
+.machine-description>span{color:#9ba2ff}.machine-description h2{color:#f4f1e9}.machine-description p{color:#999}
+.tier-strip button,.tier-strip button:hover,.tier-strip button.active{color:#555;border:0;background:#f5f3ed;box-shadow:none}
+.tier-strip button.active{outline:3px solid var(--machine);outline-offset:-3px}
+.tier-strip strong,.tier-strip button.active strong{color:#111}.tier-strip span{color:#555}.tier-strip small{color:#777}
+.pool-heading{border-color:#3a3a3a}.pool-heading span{color:#999}.pool-heading h3{color:#f4f1e9}
+.pool-filters button{color:#aaa;border-color:#454545;background:#181818}.pool-filters button:hover{color:#111;border-color:#fff;background:#fff}.pool-filters button.active{color:#111;border-color:#fff;background:#fff;box-shadow:none}
+.pool-note{color:#858585}
+.pool-card-image{border-color:#3b3b3b;background:#1a1a1a}
+.machine-card-grid strong{color:#f1eee6}.machine-card-grid small{color:#8b8b8b}.machine-card-grid b{color:#f1eee6}
+.machine-method{border-radius:12px;overflow:hidden}
+
+@media(max-width:1000px){
+  .machine-workbench{grid-template-columns:360px 1fr}
+}
+@media(max-width:760px){
+  .site-header nav button{padding:0 13px;font-size:9px}.machine-workbench{display:block}.machine-pull-panel{margin-bottom:16px;border-radius:16px}.machine-catalog{border-radius:16px}.tier-strip button{border-radius:8px}.machine-tabs button{border-radius:9px}
+}
+
+/* Campaign cover */
+.brand-hero{width:auto;height:620px;min-height:0;margin:28px 0 0;border:1px solid #353535;border-radius:12px}
+.brand-art{height:100%;object-fit:cover;object-position:center;transform:translate3d(0,var(--hero-image-shift,0px),0) scale(var(--hero-image-scale,1));transform-origin:center center;will-change:transform}
+.brand-shade{opacity:var(--hero-shade-opacity,1);will-change:opacity}
+.brand-copy{left:50px;top:50%;width:min(410px,38%);transform:translate3d(0,calc(-55% + var(--hero-copy-shift,0px)),0);opacity:var(--hero-copy-opacity,1);will-change:transform,opacity}
+.brand-copy p{font-size:16px}.brand-copy>img{width:100%}
+.brand-stats{display:none!important}
+
+@media(max-width:760px){
+  .brand-hero{width:auto;height:auto;min-height:0;margin:18px 8px 0;padding-top:306px;border:1px solid #353535;border-radius:12px}
+  .brand-art{inset:0;height:306px;object-fit:cover;object-position:68% center}
+  .brand-shade{height:306px;background:linear-gradient(0deg,#080808 0%,transparent 38%),linear-gradient(90deg,rgba(0,0,0,.38),transparent 40%)}
+  .brand-copy{position:relative;left:auto;right:auto;top:auto;bottom:auto;width:auto;padding:25px 18px 28px;transform:none;opacity:1;background:#080808}
+  .brand-copy>img{width:min(100%,330px)}.brand-copy p{margin:21px 0;font-size:14px}.brand-actions{grid-template-columns:1fr}
+}
+
+/* Pack reveal color choreography */
+.opening-color-wash,.result-color-wash{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.opening-color-wash span,.result-color-wash span{position:absolute;inset:-12%;display:block;will-change:transform,opacity}
+.opening-color-wash span:first-child{background:var(--pack);mix-blend-mode:screen;animation:openingColorSweep 1.25s cubic-bezier(.7,0,.2,1) both}
+.opening-color-wash span:last-child{background:linear-gradient(110deg,transparent 22%,color-mix(in srgb,var(--accent),white 18%) 46% 56%,transparent 78%);animation:openingLightCut 1.15s .08s cubic-bezier(.2,.8,.2,1) both}
+.opening-copy{animation:openingCopyIn .62s .08s cubic-bezier(.16,1,.3,1) both}
+.opening-pack{border-color:var(--pack);box-shadow:0 55px 95px #000d,0 0 0 5px color-mix(in srgb,var(--pack),transparent 64%),0 0 130px color-mix(in srgb,var(--pack),transparent 34%)}
+.opening-status{color:var(--pack)}
+
+.pack-overlay.result{isolation:isolate;perspective:1200px;background:radial-gradient(circle at 50% 48%,color-mix(in srgb,var(--pull),transparent 78%),transparent 48%),#070707}
+.pack-overlay.result:before{content:"";position:absolute;z-index:0;inset:0;background:var(--pull);pointer-events:none;animation:resultImpactFlash .62s cubic-bezier(.2,.75,.2,1) both}
+.result-color-wash{z-index:0}
+.result-color-wash span:first-child{background:linear-gradient(90deg,transparent 0 12%,var(--pull) 12% 88%,transparent 88%);opacity:.26;animation:resultColorOpen .9s cubic-bezier(.16,1,.3,1) both}
+.result-color-wash span:last-child{background:linear-gradient(115deg,transparent 30%,color-mix(in srgb,var(--pull),white 35%) 48%,transparent 66%);mix-blend-mode:screen;animation:resultLightPass 1.05s .12s cubic-bezier(.2,.75,.2,1) both}
+.result-aura{position:absolute;z-index:1;width:min(72vw,760px);aspect-ratio:1;border:3px solid var(--pull);border-radius:50%;opacity:.16;box-shadow:0 0 0 28px color-mix(in srgb,var(--pull),transparent 86%),0 0 150px color-mix(in srgb,var(--pull),transparent 35%);animation:resultAuraOpen 1s .08s cubic-bezier(.16,1,.3,1) both}
+.result-card{z-index:2;border:2px solid var(--pull);border-radius:14px;background:#111;box-shadow:0 34px 90px #000d,0 0 110px color-mix(in srgb,var(--pull),transparent 48%);animation:pullCardReveal .9s .08s cubic-bezier(.16,1,.3,1) both}
+.result-card:before{content:"";position:absolute;left:16px;right:16px;top:-2px;height:5px;border-radius:0 0 5px 5px;background:var(--pull);transform-origin:left;animation:resultRail .7s .52s cubic-bezier(.16,1,.3,1) both}
+.revealed-card{border-radius:9px;background:#050505;box-shadow:0 0 0 1px color-mix(in srgb,var(--pull),transparent 42%)}
+.revealed-card>img{position:relative;z-index:1;animation:pullImageReveal .72s .24s cubic-bezier(.16,1,.3,1) both}
+.foil-pass{position:absolute;z-index:2;inset:-30%;display:block;background:linear-gradient(112deg,transparent 35%,rgba(255,255,255,.08) 43%,color-mix(in srgb,var(--pull),white 55%) 50%,rgba(255,255,255,.1) 57%,transparent 65%);mix-blend-mode:screen;transform:translateX(-85%);animation:pullFoilPass .9s .48s cubic-bezier(.3,.7,.2,1) both}
+.result-copy,.result-name,.result-card button{animation:pullCopyIn .5s .52s ease both}
+.result-copy strong,.result-name>div small{color:var(--pull)}
+.holo-result .result-aura{opacity:.28;border-width:5px;box-shadow:0 0 0 34px color-mix(in srgb,var(--pull),transparent 80%),0 0 190px color-mix(in srgb,var(--pull),transparent 22%)}
+.holo-result:before{animation-name:resultImpactFlashHolo}
+.holo-result .result-color-wash span:first-child{animation-name:resultColorOpenHolo}
+.standard-result .foil-pass{opacity:.55}
+
+@keyframes openingColorSweep{0%{opacity:0;transform:translateX(-85%) skewX(-12deg)}35%{opacity:.32}100%{opacity:.08;transform:translateX(85%) skewX(-12deg)}}
+@keyframes openingLightCut{0%{opacity:0;transform:translateX(-95%)}55%{opacity:.72}100%{opacity:0;transform:translateX(95%)}}
+@keyframes openingCopyIn{from{opacity:0;transform:translateX(-36px)}to{opacity:1;transform:translateX(0)}}
+@keyframes resultImpactFlash{0%{opacity:.72}100%{opacity:0}}
+@keyframes resultImpactFlashHolo{0%{opacity:1}48%{opacity:.18}100%{opacity:0}}
+@keyframes resultColorOpen{0%{opacity:0;transform:scaleX(.05)}48%{opacity:.68}100%{opacity:.1;transform:scaleX(1)}}
+@keyframes resultColorOpenHolo{0%{opacity:0;transform:scaleX(.05)}48%{opacity:.88}100%{opacity:.17;transform:scaleX(1)}}
+@keyframes resultLightPass{0%{opacity:0;transform:translateX(-90%)}48%{opacity:.75}100%{opacity:0;transform:translateX(90%)}}
+@keyframes resultAuraOpen{from{opacity:0;transform:scale(.15) rotate(-14deg)}to{transform:scale(1) rotate(0)}}
+@keyframes pullCardReveal{0%{opacity:0;transform:perspective(1000px) translateY(90px) rotateY(64deg) scale(.62);filter:brightness(2.3)}68%{opacity:1;transform:perspective(1000px) translateY(-10px) rotateY(-3deg) scale(1.025);filter:brightness(1.16)}100%{opacity:1;transform:none;filter:brightness(1)}}
+@keyframes pullImageReveal{from{opacity:0;transform:scale(1.14)}to{opacity:1;transform:scale(1)}}
+@keyframes pullFoilPass{from{transform:translateX(-85%)}to{transform:translateX(85%)}}
+@keyframes pullCopyIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes resultRail{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+@media(prefers-reduced-motion:reduce){
+  .opening-color-wash span,.result:before,.result-color-wash span,.result-aura,.result-card,.result-card:before,.revealed-card>img,.foil-pass,.result-copy,.result-name,.result-card button,.opening-copy{animation:none!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .brand-art{transform:none}.brand-copy{opacity:1}
+}

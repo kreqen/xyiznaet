@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/packs/open.js": {
+      "maxDuration": 60
+    }
+  }
+}
