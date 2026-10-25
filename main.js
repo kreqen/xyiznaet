@@ -751,6 +751,26 @@ function card(card, index, className = "") {
 
 function homeView() {
   const previewCards = [cards[5], cards[0], cards[1], cards[4], cards[2]];
+  const howSteps = [
+    {
+      no: "01",
+      title: "Open the pack",
+      copy: "Choose a machine and see the exact odds before the pull",
+      visual: `<div class="how-visual how-pack-visual"><div class="how-orbit"></div><img src="/reference-packs/pack-2.webp" alt="Sealed Holo Rush pack"><span>SELECTED / HOLO RUSH</span></div>`,
+    },
+    {
+      no: "02",
+      title: "Meet your card",
+      copy: "The server reveals one original Kanto card",
+      visual: `<div class="how-visual how-reveal-visual"><div class="mini-card-back"><i></i></div><img src="${cards[4].image}" alt="Original Mewtwo card"><span>55% HOLO POOL</span></div>`,
+    },
+    {
+      no: "03",
+      title: "Make it yours",
+      copy: "Your signed pull lands in the connected binder",
+      visual: `<div class="how-visual how-binder-visual"><div class="mini-binder-count"><strong>03</strong><small>OF 50<br>FOUND</small></div><div class="mini-binder-cards">${[3,1,5].map((index)=>`<img src="${cards[index].image}" alt="${cards[index].name}">`).join("")}</div><span>PERSONAL VAULT</span></div>`,
+    },
+  ];
   return `<div class="penny-home">
     <section class="ref-hero">
       <img class="ref-hero-bg" src="/pokegen-banner.webp" alt="">
@@ -762,7 +782,7 @@ function homeView() {
       <div class="machine-grid">${packs.map((pack,index)=>`<article class="market-pack pack-${pack.id}" style="--pack:${pack.color};--accent:${pack.accent}"><div class="market-pack-art"><img class="reference-pack-image" src="/reference-packs/pack-${[1,2,3,4,2,3][index]}.webp" alt="${pack.name} sealed pack"></div><div class="market-pack-copy"><h3>${pack.name}</h3><strong>${pack.cost} SOL</strong></div><div class="pack-roster"><small>IN THIS PACK · ${pack.pool.length} CARDS</small><div>${pack.pool.map((cardIndex)=>`<span>${cards[cardIndex].name}</span>`).join("")}</div></div><div class="pack-quantity"><button type="button" aria-label="Increase quantity">+</button><span>01</span><button type="button" aria-label="Decrease quantity">−</button></div><button data-tab="packs">OPEN PACK</button></article>`).join("")}</div>
     </section>
     <section class="ref-live-pull"><div class="ref-section-title"><span>POOL PREVIEW</span><h2>Someone could pull this</h2></div><div class="ref-card-spread">${previewCards.map((item,index)=>`<img class="spread-${index+1}" src="${item.image}" alt="${item.name} original Pokémon card">`).join("")}</div><div class="ref-pull-caption"><span>FEATURED HIT</span><strong>${previewCards[2].name} · ${previewCards[2].set}</strong><button data-tab="packs">SEE THE POOL</button></div></section>
-    <section class="market-how"><div class="how-heading"><span>HOW IT WORKS</span><h2>One pack<br>three ways<br>to collect</h2></div>${[["01","Open the pack","Choose a machine and see the exact odds before the pull"],["02","Meet your card","The server reveals one original Kanto card"],["03","Make it yours","Your signed pull lands in the connected binder"]].map(([no,title,copy])=>`<article><span>${no}</span><div><h3>${title}</h3><p>${copy}</p></div></article>`).join("")}</section>
+    <section class="market-how"><div class="how-heading"><span>HOW IT WORKS</span><h2>One pack<br>three ways<br>to collect</h2></div>${howSteps.map(({no,title,copy,visual})=>`<article><span>${no}</span>${visual}<div class="how-copy"><h3>${title}</h3><p>${copy}</p></div></article>`).join("")}</section>
     <section class="ref-vault-feature"><div><span>KEEP YOUR PULLS</span><h2>Your collection.<br>Always within reach.</h2><p>Every discovered card stays attached to your wallet vault and reveals its original color in the binder.</p><button data-tab="collection">OPEN BINDER</button></div><div class="ref-vault-stack">${[["01","SECURELY VAULTED","Your pulls stay bound to the connected wallet"],["02","FULLY REVEALED","Owned cards return to their original color"],["03","READY WORLDWIDE","Open the collection from any screen"]].map(([no,title,copy])=>`<article><span>${no}</span><div><strong>${title}</strong><p>${copy}</p></div></article>`).join("")}</div></section>
     <section class="ref-final-cta"><img src="/pokegen-banner.webp" alt=""><div><span>THE NEXT CARD</span><h2>Your next pull<br>is waiting</h2><p>Six machines. Fifty original cards. One signed vault.</p><button data-tab="packs">OPEN A PACK</button></div></section>
     <section class="market-foot"><div><strong>POKÉGEN</strong><span>SOLANA MAINNET · DROP 001</span></div><p>Fan-made prototype using original Pokémon TCG artwork<br>Wallet and payment requests target Solana mainnet</p></section>

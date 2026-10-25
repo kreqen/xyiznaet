@@ -274,14 +274,42 @@ main { min-height: 100vh; }
 .ref-pull-caption button { margin: 0 0 0 auto; min-height: 48px; }
 
 .market-how { display: grid; grid-template-columns: 1.2fr repeat(3, 1fr); gap: 14px; padding: 110px clamp(8px, 3vw, 44px); }
-.how-heading, .market-how article { min-height: 330px; padding: 32px; border: 1px solid var(--line); border-radius: 22px; background: var(--panel); }
+.how-heading, .market-how article { min-height: 430px; padding: 32px; border: 1px solid var(--line); border-radius: 22px; background: var(--panel); }
 .how-heading { background: var(--cyan); color: #071115; }
 .how-heading > span { color: #071115; }
-.market-how article { display: flex; flex-direction: column; justify-content: space-between; transition: transform .2s ease, background .2s ease; }
+.market-how article { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; transition: transform .2s ease, background .2s ease, border-color .2s ease; }
 .market-how article:hover { transform: translateY(-5px); background: var(--panel-2); }
 .market-how article > span { color: var(--cyan); font: 700 40px/1 "Space Grotesk", sans-serif; letter-spacing: -.05em; }
 .market-how article h3 { margin-bottom: 13px; font: 700 24px/1 "Space Grotesk", sans-serif; }
 .market-how article p { color: var(--muted); font-size: 14px; line-height: 1.5; }
+.how-copy { position: relative; z-index: 3; }
+.how-visual { position: relative; flex: 1; min-height: 210px; display: grid; place-items: center; margin: 8px -10px 18px; }
+.how-visual::before { content: ""; position: absolute; inset: 15% 2%; border-radius: 50%; background: radial-gradient(circle, rgba(92,236,238,.15), transparent 66%); }
+.how-visual > span { position: absolute; left: 10px; bottom: 7px; color: #717e86; font: 700 8px/1 "Space Grotesk", sans-serif; letter-spacing: .12em; }
+.how-pack-visual img { position: relative; z-index: 2; width: 126px; max-height: 205px; object-fit: contain; transform: rotate(-7deg); filter: drop-shadow(0 18px 18px rgba(0,0,0,.48)); transition: transform .25s ease; }
+.market-how article:hover .how-pack-visual img { transform: rotate(-3deg) translateY(-5px); }
+.how-orbit { position: absolute; width: 178px; aspect-ratio: 1; border: 1px solid rgba(92,236,238,.26); border-radius: 50%; }
+.how-orbit::before, .how-orbit::after { content: ""; position: absolute; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 15px rgba(92,236,238,.6); }
+.how-orbit::before { width: 8px; height: 8px; left: 9px; top: 42px; }
+.how-orbit::after { width: 5px; height: 5px; right: 17px; bottom: 27px; }
+.how-reveal-visual { display: block; }
+.how-reveal-visual img, .mini-card-back { position: absolute; top: 50%; left: 50%; width: 112px; aspect-ratio: .716; border-radius: 7px; box-shadow: 0 18px 25px rgba(0,0,0,.44); }
+.how-reveal-visual img { z-index: 2; object-fit: cover; transform: translate(-24%,-53%) rotate(8deg); transition: transform .25s ease; }
+.market-how article:hover .how-reveal-visual img { transform: translate(-19%,-57%) rotate(5deg); }
+.mini-card-back { transform: translate(-76%,-47%) rotate(-9deg); border: 1px solid rgba(92,236,238,.3); background: radial-gradient(circle, var(--cyan) 0 7%, #17242b 8% 18%, #0a1116 19% 34%, #21333c 35% 38%, #0a0e12 39%); }
+.mini-card-back::after { content: "POKÉGEN"; position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); color: rgba(255,255,255,.65); font: 700 7px/1 "Space Grotesk",sans-serif; letter-spacing: .1em; }
+.how-binder-visual { display: block; }
+.mini-binder-count { position: absolute; z-index: 5; right: 4px; top: 8px; width: 65px; aspect-ratio: 1; display: grid; place-content: center; text-align: center; border-radius: 50%; background: var(--yellow); color: #0c1115; box-shadow: 0 9px 22px rgba(0,0,0,.32); }
+.mini-binder-count strong { font: 700 21px/1 "Space Grotesk",sans-serif; }
+.mini-binder-count small { margin-top: 3px; font: 700 6px/1.05 "Space Grotesk",sans-serif; }
+.mini-binder-cards { position: absolute; inset: 15px 20px 20px; }
+.mini-binder-cards img { position: absolute; left: 50%; top: 50%; width: 103px; border-radius: 6px; box-shadow: 0 15px 23px rgba(0,0,0,.44); transition: transform .25s ease; }
+.mini-binder-cards img:nth-child(1) { transform: translate(-91%,-45%) rotate(-13deg); }
+.mini-binder-cards img:nth-child(2) { z-index: 2; transform: translate(-50%,-55%); }
+.mini-binder-cards img:nth-child(3) { transform: translate(-9%,-45%) rotate(13deg); }
+.market-how article:hover .mini-binder-cards img:nth-child(1) { transform: translate(-96%,-48%) rotate(-16deg); }
+.market-how article:hover .mini-binder-cards img:nth-child(2) { transform: translate(-50%,-60%); }
+.market-how article:hover .mini-binder-cards img:nth-child(3) { transform: translate(-4%,-48%) rotate(16deg); }
 
 .ref-vault-feature { display: grid; grid-template-columns: .9fr 1.1fr; gap: 60px; align-items: center; background: linear-gradient(135deg, rgba(164,138,255,.15), transparent 45%), #10151b; }
 .ref-vault-feature > div:first-child p { max-width: 490px; margin-top: 24px; color: var(--muted); font-size: 17px; line-height: 1.6; }
@@ -489,7 +517,8 @@ main { min-height: 100vh; }
   .ref-pull-caption { left: 28px; right: 28px; bottom: 25px; align-items: start; flex-direction: column; }
   .ref-pull-caption button { width: 100%; margin: 0; }
   .market-how { grid-template-columns: 1fr; padding: 80px 0; }
-  .how-heading, .market-how article { min-height: 250px; }
+  .how-heading, .market-how article { min-height: 340px; }
+  .how-heading { min-height: 260px; }
   .ref-vault-feature { grid-template-columns: 1fr; gap: 45px; }
   .market-foot { padding-bottom: 70px; flex-direction: column; }
   .market-foot p { text-align: left; }
