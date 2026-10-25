@@ -293,11 +293,19 @@ main { min-height: 100vh; }
 .how-orbit::before { width: 8px; height: 8px; left: 9px; top: 42px; }
 .how-orbit::after { width: 5px; height: 5px; right: 17px; bottom: 27px; }
 .how-reveal-visual { display: block; }
-.how-reveal-visual img, .mini-card-back { position: absolute; top: 50%; left: 50%; width: 112px; aspect-ratio: .716; border-radius: 7px; box-shadow: 0 18px 25px rgba(0,0,0,.44); }
-.how-reveal-visual img { z-index: 2; object-fit: cover; transform: translate(-24%,-53%) rotate(8deg); transition: transform .25s ease; }
-.market-how article:hover .how-reveal-visual img { transform: translate(-19%,-57%) rotate(5deg); }
-.mini-card-back { transform: translate(-76%,-47%) rotate(-9deg); border: 1px solid rgba(92,236,238,.3); background: radial-gradient(circle, var(--cyan) 0 7%, #17242b 8% 18%, #0a1116 19% 34%, #21333c 35% 38%, #0a0e12 39%); }
-.mini-card-back::after { content: "POKÉGEN"; position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); color: rgba(255,255,255,.65); font: 700 7px/1 "Space Grotesk",sans-serif; letter-spacing: .1em; }
+.reveal-burst { position: absolute; left: 50%; top: 49%; width: 180px; aspect-ratio: 1; transform: translate(-50%,-50%); border: 1px solid rgba(92,236,238,.2); border-radius: 50%; background: radial-gradient(circle, rgba(92,236,238,.3) 0 5%, rgba(92,236,238,.08) 6% 27%, transparent 28%); box-shadow: inset 0 0 35px rgba(92,236,238,.08); }
+.reveal-burst::before, .reveal-burst::after, .reveal-burst i { content: ""; position: absolute; left: 50%; top: 50%; width: 1px; height: 210px; background: linear-gradient(transparent,rgba(92,236,238,.28),transparent); transform: translate(-50%,-50%); }
+.reveal-burst::after { transform: translate(-50%,-50%) rotate(90deg); }
+.reveal-burst i:nth-child(1) { transform: translate(-50%,-50%) rotate(45deg); }
+.reveal-burst i:nth-child(2) { transform: translate(-50%,-50%) rotate(-45deg); }
+.reveal-burst i:nth-child(3) { width: 125px; height: 125px; border: 1px dashed rgba(92,236,238,.18); border-radius: 50%; background: none; }
+.reveal-wrapper { position: absolute; z-index: 1; left: 50%; top: 52%; width: 165px; height: 192px; transform: translate(-50%,-50%); }
+.reveal-wrapper img { position: absolute; top: 10px; width: 118px; height: 180px; object-fit: contain; opacity: .48; filter: saturate(.7) brightness(.62) drop-shadow(0 14px 13px rgba(0,0,0,.45)); }
+.reveal-wrapper .wrapper-left { left: -8px; clip-path: polygon(0 0,58% 0,47% 24%,58% 46%,46% 67%,56% 100%,0 100%); transform: translateX(-20px) rotate(-13deg); }
+.reveal-wrapper .wrapper-right { right: -8px; clip-path: polygon(42% 0,100% 0,100% 100%,44% 100%,54% 67%,42% 46%,53% 24%); transform: translateX(20px) rotate(13deg); }
+.how-reveal-visual .reveal-card { position: absolute; z-index: 3; left: 50%; top: 47%; width: 116px; aspect-ratio: .716; object-fit: cover; border-radius: 6px; transform: translate(-50%,-52%) rotate(2deg); box-shadow: 0 22px 30px rgba(0,0,0,.55), 0 0 0 2px rgba(255,220,88,.8), 0 0 25px rgba(255,220,88,.22); transition: transform .25s ease; }
+.market-how article:hover .how-reveal-visual .reveal-card { transform: translate(-50%,-58%) rotate(0deg) scale(1.03); }
+.how-reveal-visual > b { position: absolute; z-index: 4; right: 7px; top: 18px; padding: 7px 9px; border-radius: 999px; background: var(--yellow); color: #0d1216; font: 700 7px/1 "Space Grotesk",sans-serif; letter-spacing: .09em; box-shadow: 0 8px 18px rgba(0,0,0,.28); }
 .how-binder-visual { display: block; }
 .mini-binder-count { position: absolute; z-index: 5; right: 4px; top: 8px; width: 65px; aspect-ratio: 1; display: grid; place-content: center; text-align: center; border-radius: 50%; background: var(--yellow); color: #0c1115; box-shadow: 0 9px 22px rgba(0,0,0,.32); }
 .mini-binder-count strong { font: 700 21px/1 "Space Grotesk",sans-serif; }

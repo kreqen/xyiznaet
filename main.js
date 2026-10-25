@@ -762,7 +762,7 @@ function homeView() {
       no: "02",
       title: "Meet your card",
       copy: "The server reveals one original Kanto card",
-      visual: `<div class="how-visual how-reveal-visual"><div class="mini-card-back"><i></i></div><img src="${cards[4].image}" alt="Original Mewtwo card"><span>55% HOLO POOL</span></div>`,
+      visual: `<div class="how-visual how-reveal-visual"><div class="reveal-burst"><i></i><i></i><i></i></div><div class="reveal-wrapper"><img class="wrapper-left" src="/reference-packs/pack-2.webp" alt=""><img class="wrapper-right" src="/reference-packs/pack-2.webp" alt=""></div><img class="reveal-card" src="${cards[4].image}" alt="Original Mewtwo card"><b>HOLO RARE</b><span>55% HOLO POOL</span></div>`,
     },
     {
       no: "03",
