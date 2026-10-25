@@ -750,43 +750,22 @@ function card(card, index, className = "") {
 }
 
 function homeView() {
-  const stripCards = [48, 5, 0, 1, 4, 11, 2, 13, 22, 9];
-  return `<div class="packd-home">
-    <section class="packd-clone-hero">
-      <img class="clone-hero-bg" src="/pokegen-banner.webp" alt="">
-      <div class="clone-hero-heading"><span>POKÉGEN</span><h1>PICK. PACK. PULL.</h1><p>One pack. One original Kanto card. Weighted on-chain pulls sent straight to your vault on Solana.</p></div>
-      <div class="clone-hero-cards clone-left">${[48,5].map((index)=>`<img src="${cards[index].image}" alt="${cards[index].name}">`).join("")}</div>
-      <div class="clone-hero-cards clone-right">${[0,4].map((index)=>`<img src="${cards[index].image}" alt="${cards[index].name}">`).join("")}</div>
-      <div class="clone-grab"><strong>YOUR PACK. YOUR PULL.</strong><button data-tab="packs"><span>06 MACHINES READY</span>CHOOSE YOUR PACK</button></div>
+  const previewCards = [cards[5], cards[0], cards[1], cards[4], cards[2]];
+  return `<div class="penny-home">
+    <section class="ref-hero">
+      <img class="ref-hero-bg" src="/pokegen-banner.webp" alt="">
+      <div class="ref-hero-copy"><span>LIVE ON SOLANA</span><h1>RIP THE PACK<br>OWN THE PULL</h1><p>Original Kanto cards. Weighted pulls. Every hit saved to your vault.</p><button data-tab="packs">OPEN A PACK</button></div>
+      <div class="ref-pack-fan" aria-hidden="true">${[packs[3],packs[1],packs[5]].map((pack,index)=>`<article class="ref-pack ref-pack-${index+1}"><img class="reference-pack-image" src="/reference-packs/pack-${[4,2,3][index]}.webp" alt=""></article>`).join("")}</div>
     </section>
-
-    <section class="clone-packs packd-section">
-      <div class="clone-copy"><span>POKÉGEN / DROP 001</span><h2>PACKS</h2><p>Choose a machine, crack the seal and reveal one original Pokémon card. Exact odds are visible before every pull.</p><button data-tab="packs">CHOOSE A PACK</button></div>
-      <div class="clone-pack-trio">${[1,2,4].map((n,index)=>`<img class="trio-${index+1}" src="/reference-packs/pack-${n}.webp" alt="Sealed Pokégen pack">`).join("")}</div>
+    <section class="machine-market">
+      <div class="market-title"><div><span>CHOOSE YOUR ODDS</span><h2>Find your next pull</h2></div><button data-tab="packs">VIEW ALL MACHINES</button></div>
+      <div class="machine-grid">${packs.map((pack,index)=>`<article class="market-pack pack-${pack.id}" style="--pack:${pack.color};--accent:${pack.accent}"><div class="market-pack-art"><img class="reference-pack-image" src="/reference-packs/pack-${[1,2,3,4,2,3][index]}.webp" alt="${pack.name} sealed pack"></div><div class="market-pack-copy"><h3>${pack.name}</h3><strong>${pack.cost} SOL</strong></div><div class="pack-roster"><small>IN THIS PACK · ${pack.pool.length} CARDS</small><div>${pack.pool.map((cardIndex)=>`<span>${cards[cardIndex].name}</span>`).join("")}</div></div><div class="pack-quantity"><button type="button" aria-label="Increase quantity">+</button><span>01</span><button type="button" aria-label="Decrease quantity">−</button></div><button data-tab="packs">OPEN PACK</button></article>`).join("")}</div>
     </section>
-
-    <section class="clone-feature packd-section">
-      <div class="clone-feature-packs">${[4,1,3].map((n,index)=>`<img class="feature-${index+1}" src="/reference-packs/pack-${n}.webp" alt="Pokégen booster">`).join("")}</div>
-      <div class="clone-copy clone-feature-copy"><span>THE KANTO BOOSTER · LIVE NOW</span><h2>A SINGLE<br>PACK. ONE<br>POKÉMON.</h2><p>Six weighted machines. Fifty original cards. Every pull verified by the server and stored in your wallet binder.</p><button data-tab="packs">CRACK THE PACK</button></div>
-    </section>
-
-    <section class="clone-card-rail packd-section"><div>${stripCards.concat(stripCards).map((index)=>`<article style="--rail:${cards[index].color}"><img src="${cards[index].image}" alt="${cards[index].name}"><span>${cards[index].name}</span><small>${cards[index].rarity}</small></article>`).join("")}</div></section>
-
-    <section class="clone-one-pull packd-section"><span>THE ORIGINAL KANTO ARCHIVE</span><h2>FIFTY CARDS. ONE PULL.</h2><p>Base Set, Jungle and Fossil — every machine holds a different pool with its own transparent rarity split.</p><button data-tab="packs">CRACK THE PACK</button></section>
-
-    <div class="clone-marquee lime"><div>${Array(8).fill("PICK. PACK. PULL. · POKÉGEN · ").join("")}</div></div>
-    <div class="clone-marquee dark"><div>${Array(7).fill("RIP THE PACK. · KEEP THE CARD. · BUILT ON SOLANA. · ").join("")}</div></div>
-
-    <section class="clone-community packd-section">
-      <div class="clone-community-art"><img src="/pokegen-logo.webp" alt="Pokégen"><i></i><b></b></div>
-      <div class="clone-copy"><span>THE KANTO VAULT</span><h2>JOIN THE<br>COLLECTION</h2><p>Open packs, discover all fifty cards and build a binder tied to your wallet. No hidden pool and no mystery odds.</p><div class="clone-chips"><span>50 ORIGINAL CARDS</span><span>BUILT ON SOLANA</span><span>6 WEIGHTED POOLS</span></div><button data-tab="collection">OPEN THE BINDER</button></div>
-    </section>
-
-    <section class="clone-stats packd-section"><div><strong>50</strong><span>CARDS IN THE ARCHIVE</span></div><div><strong>06</strong><span>PACK MACHINES</span></div><div><strong>100%</strong><span>VISIBLE ODDS</span></div><button data-tab="packs">SEE ALL PACKS</button></section>
-
-    <section class="clone-moves packd-section"><div class="clone-copy"><span>POKÉGEN</span><h2>FROM PACK TO<br>BINDER IN FOUR MOVES</h2><p>No endless menus. Pick a machine, connect Phantom, open once and keep the card in your personal vault.</p></div><div class="clone-move-grid">${[["01","PICK","Choose one of six weighted machines"],["02","CONNECT","Link Phantom to your private binder"],["03","RIP","Confirm the pull and break the seal"],["04","KEEP","Your card appears inside the vault"]].map(([n,t,c])=>`<article><span>${n}</span><strong>${t}</strong><p>${c}</p></article>`).join("")}</div></section>
-
-    <footer class="clone-footer"><div><img src="/pokegen-logo.webp" alt="Pokégen"><p>Choose a pack. Keep the card.<br>Built on Solana mainnet.</p></div><span>© 2026 POKÉGEN · KANTO DROP 001</span></footer>
+    <section class="ref-live-pull"><div class="ref-section-title"><span>POOL PREVIEW</span><h2>Someone could pull this</h2></div><div class="ref-card-spread">${previewCards.map((item,index)=>`<img class="spread-${index+1}" src="${item.image}" alt="${item.name} original Pokémon card">`).join("")}</div><div class="ref-pull-caption"><span>FEATURED HIT</span><strong>${previewCards[2].name} · ${previewCards[2].set}</strong><button data-tab="packs">SEE THE POOL</button></div></section>
+    <section class="market-how"><div class="how-heading"><span>HOW IT WORKS</span><h2>One pack<br>three ways<br>to collect</h2></div>${[["01","Open the pack","Choose a machine and see the exact odds before the pull"],["02","Meet your card","The server reveals one original Kanto card"],["03","Make it yours","Your signed pull lands in the connected binder"]].map(([no,title,copy])=>`<article><span>${no}</span><div><h3>${title}</h3><p>${copy}</p></div></article>`).join("")}</section>
+    <section class="ref-vault-feature"><div><span>KEEP YOUR PULLS</span><h2>Your collection.<br>Always within reach.</h2><p>Every discovered card stays attached to your wallet vault and reveals its original color in the binder.</p><button data-tab="collection">OPEN BINDER</button></div><div class="ref-vault-stack">${[["01","SECURELY VAULTED","Your pulls stay bound to the connected wallet"],["02","FULLY REVEALED","Owned cards return to their original color"],["03","READY WORLDWIDE","Open the collection from any screen"]].map(([no,title,copy])=>`<article><span>${no}</span><div><strong>${title}</strong><p>${copy}</p></div></article>`).join("")}</div></section>
+    <section class="ref-final-cta"><img src="/pokegen-banner.webp" alt=""><div><span>THE NEXT CARD</span><h2>Your next pull<br>is waiting</h2><p>Six machines. Fifty original cards. One signed vault.</p><button data-tab="packs">OPEN A PACK</button></div></section>
+    <section class="market-foot"><div><strong>POKÉGEN</strong><span>SOLANA MAINNET · DROP 001</span></div><p>Fan-made prototype using original Pokémon TCG artwork<br>Wallet and payment requests target Solana mainnet</p></section>
   </div>`;
 }
 
